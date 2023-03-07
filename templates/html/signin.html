@@ -1,0 +1,25 @@
+{{define "signin"}}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forum</title>
+  <link rel="icon" href="/static/image/icon.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="/static/css/signin.css">
+</head>
+<body>
+  <a href="/">Home</a>
+  <div class="login-box">
+    <h2>Sign in</h2>
+    <p class="message">{{.}}</p>
+    <form action="/signIn" method="post">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required/>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required/>
+      <p>Don't you have an account? <a href="/signUp">Sign up</a></p>
+      <input type="submit" value="Sign in" />
+    </form>
+  </div>
+</body>
+</html>
+{{end}}

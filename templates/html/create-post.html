@@ -1,0 +1,32 @@
+{{define "create-post"}}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forum</title>
+	<link rel="icon" href="/static/image/icon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="/static/css/create-post.css">
+</head>
+<body>
+	<a href="/">Home</a>
+	<h1>Create New Post</h1>
+	<form action="/newPost" method="POST">
+		{{if eq .Status false}}
+			<p>enter the data correctly</p>
+		{{end}}
+		<label>Title:</label>
+		<input type="text" name="title" maxlength="50" minlength="3" placeholder="Enter a title for your post" required>
+		<br><br>
+		<label>Post Categories</label>
+        <div class="categories">
+			{{ range .Categories}}
+				<input type="checkbox" name="categories" value="{{.Category}}"/>{{.Category}} <br />
+    		{{end}}
+        </div>
+		<label>Content:</label>
+		<textarea name="content" rows="5" cols="50" placeholder="Enter the content for your post" required></textarea>
+		<br><br>
+		<input type="submit" value="Create Post">
+	</form>
+</body>
+</html>
+{{end}}

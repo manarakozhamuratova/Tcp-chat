@@ -1,0 +1,54 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forum</title>
+    <link rel="icon" href="/static/image/icon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="/static/css/index.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <a class="node" href="/">Home</a>
+      <div class="dropdownnav">
+        <button class="dropbtnnav">Categories</button>
+        <div class="dropdownnav-content">
+          {{ range .Categories}}
+            <a href="/category?ID={{.ID}}" id="{{.ID}}">{{.Category}}</a>
+          {{end}}
+        </div>
+      </div>
+      {{ if eq .Status true }}
+        <a class="node" href="/createdPosts">Created posts</a>
+        <a class="node" href="/ratedPosts">Rated posts</a>
+        <a class="node" href="/newPost">New post</a>
+        <a class="node" href="/signOut">Sign out</a>
+      {{ else }}
+        <a class="node" href="/signIn">Sign in</a>
+        <a class="node" href="/signUp">Sign up</a>
+      {{end}}
+    </div>
+    <div class="container">
+      <div class="posts">
+        {{range .Posts}}
+      <div class="post-container">
+        <div class="post-title" onclick="window.location='/post?ID={{.ID}}'">{{.Title}}</div>
+        <div class="post-author">Author: {{.User.Username}}</div>
+        <div class="dropdown">
+          <button class="dropbtn">Categories</button>
+          <div class="dropdown-content">
+            {{ range .Categories}}
+              <a href="/category?ID={{.ID}}" id="{{.ID}}">{{.Category}}</a>
+            {{end}}
+          </div>
+        </div>
+        <div class="post-content">
+          {{.Content}}
+        </div>
+        <div class="post-reactions">Like {{.Like}} Disike {{.Dislike}}</div>
+      </div>
+      {{end}}
+      </div>
+    </div>
+  </body>
+</html>
+{{end}}

@@ -1,0 +1,17 @@
+{{define "error"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forum</title>
+    <link rel="icon" href="/staic/image/icon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="/static/css/error.css">
+  </head>
+  <body>
+    <div class="home">
+        <h1>{{ .StatusCode}}</h1>
+        <p>{{ .StatusText}}</p>
+        <a href="/">Home</a> 
+    </div>
+  </body>
+</html>
+{{end}}

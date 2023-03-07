@@ -1,0 +1,61 @@
+{{ define "post" }} {{ $session := .Session}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forum</title>
+    <link rel="icon" href="/static/image/icon.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="/static/css/post.css" />
+</head>
+
+<body>
+    <div class="container">
+        <a class="home" href="/">Home</a>
+        <div class="post-container">
+            <div class="post-title">{{.Title}}</div>
+            <div class="post-author">Author: {{.User.Username}}</div>
+            <div class="dropdown">
+                <button class="dropbtn">
+            <i>Categories</i>
+          </button>
+                <div class="dropdown-content">
+                    {{ range .Categories}}
+                    <a href="/category?ID={{.ID}}" id="{{.ID}}">{{.Category}}</a> {{end}}
+                </div>
+            </div>
+            <div class="post-content">{{.Content}}</div> 
+            {{if eq $session true}}
+                <div class="post-likes"><a href="/postLike?ID={{.ID}}">Likes</a> {{.Like}}</div>
+                <div class="post-dislikes"><a href="/postDislike?ID={{.ID}}">Dislikes</a> {{.Dislike}}</div>
+            {{else}}
+                <div class="post-likes">Likes: {{.Like}}</div>
+                <div class="post-dislikes">Dislikes: {{.Dislike}}</div>
+            {{end}}
+        </div>
+        <div class="comments-container">
+            {{range .Comments}}
+            <div class="comment-container">
+                <div class="comment-author">Author: {{.Username}}</div>
+                <div class="comment-content">{{.Message}}</div> 
+                {{if eq $session true}}
+                    <div class="comment-likes"><a href="/commentLike?ID={{.ID}}">Likes</a> {{.Like}}</div>
+                    <div class="comment-dislikes"><a href="/commentDislike?ID={{.ID}}">Dislikes</a> {{.Dislike}}</div>
+                {{else}}
+                    <div class="comment-likes">Likes: {{.Like}}</div>
+                    <div class="comment-dislikes">Dislikes: {{.Dislike}}</div>
+                {{end}}
+            </div>
+            {{end}} {{if eq $session true}}
+            <div class="new-comment-container">
+                <form action="/createComment?ID={{.ID}}" method="POST">
+                    <textarea name="comment"  placeholder="Write your comment here..." required></textarea>
+                    <button type="submit">Create</button>
+                </form>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</body>
+
+</html>
+{{end}}

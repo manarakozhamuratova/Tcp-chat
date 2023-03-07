@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Manrope', sans-serif;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+.home {
+    font-size: 1.5rem;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.post-container {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    box-sizing: border-box;
+}
+
+.post-author {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.post-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.dropbtn {
+    background-color: #f5f5f5;
+    color: #000;
+    padding: 5px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.post-content {
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: default;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.post-likes {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.post-dislikes {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-container {
+    background-color: #fff;
+    padding: 1rem;
+    margin: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    box-sizing: border-box;
+}
+
+.comment-author {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.comment-content {
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: default;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.comment-likes {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-dislikes {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.new-comment-container {
+    background-color: #fff;
+    padding: 1rem;
+    margin: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    box-sizing: border-box;
+}
+
+.new-comment-container form {
+    margin-bottom: 0.5rem;
+}
+
+.new-comment-container textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #000;
+    resize: none;
+}
+
+.new-comment-container button {
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
